@@ -1,0 +1,42 @@
+@media (max-width: 950px) {
+  .sidebar {
+    position: absolute;
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "title title"
+    "progress progress"
+    "info menu";
+    background: $menu-color;
+
+    &__title {
+      grid-area: title;
+    }
+
+    &__progress {
+      grid-area: progress;
+    }
+
+    &__menu {
+      position: static;
+    }
+  }
+
+  .info {
+    grid-area: info;
+    border-right: solid 1px $light-text-color;
+
+    &__hint {
+      padding-right: 0.5em;
+    }
+  }
+
+  .menu {
+    grid-area: menu;
+
+    &__title {
+      padding: 0;
+      margin: 0.7em 0;
+    }
+  }
+}

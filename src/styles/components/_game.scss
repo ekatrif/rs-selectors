@@ -1,0 +1,42 @@
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.1em;
+  margin: 1em;
+
+  &__title {
+    display: block;
+    padding: 0;
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 300;
+    text-align: center;
+  }
+
+  &__help-link {
+    display: block;
+    padding: 0.5em;
+    font-size: 1rem;
+    text-align: center;
+    background-color: $bg-color-dark;
+    border-radius: 0.5em;
+  }
+}
+
+.helper {
+  position: fixed;
+  display: none;
+  background: $bg-color-light;
+  padding: 0.6em 1em;
+  z-index: 100;
+  font-size: 1.1rem;
+  color: $dark-grey-color;
+  border-bottom: solid 0.1em $light-text-color;
+  box-shadow: 0 0.3em 0 $bg-color-dark;
+  transform: rotateX(20deg);
+  outline: solid 0.06em transparent;
+  word-wrap: nowrap;
+  white-space: nowrap;
+}

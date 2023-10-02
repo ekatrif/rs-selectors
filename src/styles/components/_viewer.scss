@@ -1,0 +1,61 @@
+.viewer {
+  display: flex;
+  flex-direction: column;
+  padding: 0.8em;
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5em;
+  }
+
+  &__name {
+    color: $light-color;
+  }
+
+  &__file {
+    margin-left: auto;
+  }
+
+  &__window {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: 2em repeat(2, 1fr);
+    grid-template-areas: "numbers input"
+      "numbers info"
+      "numbers help";
+    justify-content: start;
+    padding-right: 0.8em;
+    background-color: $bg-color-dark;
+    color: $light-text-color;
+    line-height: 1.2;
+  }
+
+  &__lines {
+    grid-area: numbers;
+    display: flex;
+    flex-direction: column;
+    margin-right: 1em;
+    padding: 0.5em;
+    background-color: $bg-color-dark;
+    border-right: solid 1px $light-text-color;
+    text-align: right;
+  }
+
+  &__markup {
+    margin: 0.5em 0.5em 0.5em 0;
+  }
+}
+
+pre code{
+  display: flex !important;
+  flex-direction: column;
+  margin-top: -2em;
+  background-color: transparent !important;
+
+  // & > *:not(:first-child, :last-child) {
+  //   padding-left: 1em;
+  //   cursor: pointer;
+  // }
+}

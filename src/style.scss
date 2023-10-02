@@ -1,0 +1,31 @@
+@import './styles/abstracts/variables';
+@import './styles/base/common';
+@import './styles/base/layout';
+@import './styles/base/typography';
+@import './styles/base/animations';
+
+@import './styles/components/header';
+@import './styles/components/footer';
+@import './styles/components/sidebar';
+
+@import './styles/components/game';
+@import './styles/components/table';
+@import './styles/components/editor';
+@import './styles/components/viewer';
+
+@import './styles/components/items-on-table/plate';
+@import './styles/components/items-on-table/apple';
+@import './styles/components/items-on-table/bento';
+@import './styles/components/items-on-table/pickle';
+@import './styles/components/items-on-table/orange';
+@import './styles/components/items-on-table/chocolate';
+
+@import './styles/adaptability/layout';
+@import './styles/adaptability/sidebar';
+@import './styles/adaptability/game';
+@import './styles/adaptability/plate';
+@import './styles/adaptability/apple';
+@import './styles/adaptability/bento';
+@import './styles/adaptability/pickle';
+@import './styles/adaptability/orange';
+@import './styles/adaptability/chocolate';

@@ -1,0 +1,11 @@
+@media (max-width: 580px) {
+  bento {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4em;
+    height: 4em;
+    background-color: $bento-color;
+    box-shadow: 0px 0.2em 0px $bg-color-dark;
+  }
+}

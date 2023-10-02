@@ -1,0 +1,25 @@
+html {
+  height: 100%;
+}
+
+body {
+  background-color: $bg-color-main;
+  color: $main-color;
+  font-family: $main-font;
+  font-size: 1rem;
+  font-weight: 400;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+a {
+  color: $main-color;
+  text-decoration: none;
+  transition: all 0.5s;
+
+  &:hover,
+  &:focus {
+  text-decoration: underline;
+  transition: all 0.5s;
+}
+}

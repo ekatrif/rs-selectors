@@ -1,0 +1,384 @@
+.sidebar {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 2em 0.8em 0.8em;
+  background-color: $bg-color-dark;
+
+  &__title {
+    display: grid;
+    grid-template-columns: auto repeat(4, 1fr);
+    grid-template-rows: auto;
+    justify-content: start;
+    color: $main-color;
+  }
+
+  &__level {
+    font-size: 1.5rem;
+  }
+
+  &__check {
+
+    position: relative;
+    margin-left: 1em;
+    margin-top: -0.2em;
+    width: 0.75em;
+    height: 1.25em;
+    opacity: 2;
+    border: solid 0.2em $main-color;
+    border-width: 0 0.25em 0.25em 0;
+    opacity: .2;
+    transform: rotate(40deg);
+
+    &-checked {
+      opacity: .7;
+      border: solid 0.2em $check-color;
+      border-width: 0 0.25em 0.25em 0;
+    }
+
+    &-help {
+      opacity: .7;
+      border: solid 0.2em $table-color;
+      border-width: 0 0.25em 0.25em 0;
+    }
+  }
+
+  &__prev,
+  &__next {
+    position: relative;
+    justify-self: end;
+    height: 1.8em;
+    width: 1.8em;
+    margin-left: 1em;
+    opacity: 0.5;
+    transition: opacity .2s ease-out;
+
+    &:after {
+      content: "";
+      width: 1.125em;
+      height: 1.125em;      
+      border: solid 0.125em $main-color;
+      border-width: 0.125em 0.125em 0 0;
+      transform-origin: center center;
+      cursor: pointer;
+      transition: 0.5s all;
+    }
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+      transition: 0.5s all;
+    }
+  }
+
+  &__prev {
+    transform: rotate(-135deg);
+
+    &:after {
+      position: absolute;
+      top: 0.4em;
+      right: 0.125em;
+    }
+  }
+
+  &__next {
+    justify-content: flex-end;
+    transform: rotate(45deg);
+
+    &:after {
+      position: absolute;
+      top: 0.2em;
+      left: 0.125em;
+    }
+  }
+
+  &__burger {
+    position: absolute;
+    top: 2.5em;
+    right: 0.8em;
+    z-index: 10;
+    height: 1.9em;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: .05s all;
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+      transition: 0.5s all;
+    }
+  }
+
+  &__progress {
+    width: 100%;
+    background: $bg-color-dark;
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 24em;
+    padding: 0;
+    width: 100%;
+    overflow-y: hidden;
+    background: $menu-color;
+    transition: all 0.2s ease-in-out;
+
+    &-open {
+      left: 0;
+    }
+  }
+}
+
+.progress__line {
+  position: relative;
+  background: $bg-color-light;
+  width: 0;
+  height: 0.125em;
+
+  &:after {
+    position: absolute;
+    content: "";
+    right: -0.4em;
+    top: -0.2em;
+    width: 0.25em;
+    height: 0.25em;
+    border: solid 0.125em $bg-color-dark;
+    background: $bg-color-light;
+    border-radius: 0.3em;
+  }
+}
+
+.burger__icon {
+  position: relative;
+  margin-top: 0.625em;
+  width: 1.7em;
+  height: 0.125em;
+  background: $light-color;
+  cursor: pointer;
+  transition: .15s all ease-out;
+
+  &:before,
+  &:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 0.125em;
+    transform-origin: left;    
+    background: $light-color;
+    transition: all .1s ease-out;
+  }
+
+  &:before {
+    top: -0.625em;    
+  }
+
+  &:after {
+    top: 0.625em;
+  }
+
+  &-open {
+    background: $bg-color-dark;
+  
+    &:before {
+      top: -0.56em;
+      transform: rotate(45deg);
+    }
+  
+    &:after {
+      top: 0.6em;
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+.info {
+
+		&__title {
+      font-size: 1.2em;
+      font-weight: 600;
+		}
+
+		&__subtitle {
+      margin: 0 0 1em 0;
+      font-size: 1.2em;
+      font-weight: 300;
+      opacity: .7;
+		}
+
+		&__syntax {
+      display: inline-block;
+      margin: 0;
+      padding: 5px 8px;
+      margin-bottom: 1.2em;
+      font-size: 1.5em;
+      font-weight: 200;
+      opacity: .8;
+      background: $dark-text-color;
+      border-bottom: solid 0.1em $light-text-color;
+		}
+
+		&__hint {
+      margin-bottom: 1.2em;
+      color: $light-text-color;
+      font-size: 1em;
+      line-height: 1.5;
+
+      & > strong,
+      & > tag {
+        color: $light-text-color;
+        background: $dark-text-color;
+        margin: 0 0.2em;
+        padding: 0.2em 0.4em;
+        font-family: menlo, monospace;
+        font-size: 0.8rem;
+        font-weight: 400;
+      }
+		}
+}
+
+.examples {
+
+		&__title {
+      display: inline-block;
+      margin: 2.8em 0 1em 0;
+      padding: 0.2em;
+      font-weight: 400;
+      background-color: $light-text-color;
+      color: $dark-text-color;
+		}
+
+		&__body {
+      display: flex;
+      flex-direction: column;
+		}
+
+		&__example {
+
+      padding: 0.6em 0 0.8em 0;
+      font-weight: 200;
+      line-height: 1.7;
+
+      &:not(:last-child) {
+        border-bottom: solid 0.1em $dark-grey-color;
+      }
+
+      & > strong,
+      & > tag {
+        color: $light-text-color;
+        background: $dark-text-color;
+        margin: 0 0.2em;
+        padding: 0.2em 0.4em;
+        font-family: menlo, monospace;
+        font-size: 0.8rem;
+        font-weight: 400;
+      }
+
+      & > tag {
+
+        &:before {
+          content: "<";
+        }
+
+        &:after {
+          content: ">";
+        }
+      }
+		}
+}
+
+.menu {
+
+  &__title {
+    margin: 0;
+    padding: 1.4em 0 0.9em 1em;
+    font-size: 1.4rem;
+    color: $light-color;
+    font-weight: normal;
+    opacity: .4;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+
+    &-active{
+      font-weight: 600;
+      color: $light-color;
+      background: $bg-color-main;
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: 0.3em 0.8em 0.3em 1.4em;
+    opacity: 0.8;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+      color: $light-color;
+      background: $bg-color-main;
+      text-decoration: none;
+    }
+  }
+
+  &__check {
+    position: relative;
+    display: inline-block;
+    width: 0.5em;
+    height: 0.8em;
+    margin-right: 1em;
+    opacity: .4; 
+    border: solid 0.2em $light-color;    
+    border-width: 0 0.2em 0.2em 0;
+    transform: rotate(40deg);
+
+    &-checked {
+      border: solid 0.2em $check-color;    
+      border-width: 0 0.2em 0.2em 0;
+    }
+
+    &-help {
+      border: solid 0.2em $table-color;
+      border-width: 0 0.2em 0.2em 0;
+    }
+
+  }
+
+  &__number {
+    display: inline-block;
+    margin-right: 0.6em;
+  }
+
+  &__btn {
+    margin: 2em auto;
+    padding: 0.5em 0;
+    width: 90%;
+    border: solid 0.125em $dark-grey-color;
+    color: $light-text-color;
+    background-color: $menu-color;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.5s all linear;
+
+    &:hover,
+    &:focus {
+      color: $light-color;
+      background-color: $dark-text-color;
+      transition: 0.5s all linear;
+    }
+  }
+}
+

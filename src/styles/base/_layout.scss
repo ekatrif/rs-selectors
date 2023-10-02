@@ -1,0 +1,42 @@
+#app {
+  display: grid;
+  grid-template-columns: 1fr 1fr 24em;
+  grid-template-rows: 3em calc(100% - 8em) 5em;
+  grid-template-areas: "header header game-menu"
+    "main main game-menu"
+    "footer footer game-menu";
+  min-height: 100%;
+}
+
+.header {
+  grid-area: header;
+}
+
+.main {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas: "game game"
+    "editor viewer";
+}
+
+.game {
+  grid-area: game;
+}
+
+.editor {
+  grid-area: editor;
+}
+
+.viewer {
+  grid-area: viewer;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+.sidebar {
+  grid-area: game-menu;
+}

@@ -1,0 +1,11 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1em;
+  padding: 0.8em;
+
+  &__logo {
+    width: 8em;    
+  }
+}

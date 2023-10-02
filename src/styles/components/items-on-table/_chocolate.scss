@@ -1,0 +1,14 @@
+chocolate {
+  background: $chocolate-color;
+  height: 2.2em;
+  width: 0.8em;
+  border: solid 0.125em $chocolate-border-color;
+  border-width: 0.1em 0.1em 0.6em;
+  margin: 1.25em 0.625em;
+  box-shadow: 0px 0.2em 0px $bg-color-dark;
+
+  &.small {
+    height: 1.8em;
+    width: 0.6em;
+  }
+}

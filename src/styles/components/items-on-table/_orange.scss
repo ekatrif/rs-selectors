@@ -1,0 +1,14 @@
+orange {
+  display: block;
+  width: 3em;
+  height: 3em;
+  background-color: $orange-color;
+  border: solid 0.125em $orange-border-color;
+  border-radius: 50%;
+  box-shadow: 0px 0.2em 0px $bg-color-dark;
+
+  &.small {
+    width: 1.7em;
+    height: 1.7em;
+  }
+}
